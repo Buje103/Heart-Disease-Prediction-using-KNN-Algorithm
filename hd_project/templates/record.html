@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'record.scss'%}">
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+    crossorigin="anonymous"
+    />
+
+</head>
+<body>
+    <main>
+    <table class ="table table-striped table-hoverv table-bordered ">
+    <thead class="table-dark">  
+        <tr>
+            
+            <th scope="col">Age</th>
+            <th scope="col">Sex</th>
+            <th scope="col">Chest Pain</th>
+            <th scope="col">Rest Blood Pressure</th>
+            <th scope="col">Cholesterol</th>
+            <th scope="col">Fasting Blood Sugar</th>
+            <th scope="col">Rest ECG</th>
+            <th scope="col">Maximum Heart rate</th>
+            <th scope="col">Induced Angina</th>
+            <th scope="col">ST Depression</th>
+            <th scope="col">ST Segment</th>
+            <th scope="col">Flourosopy</th>
+            <th scope="col">Thallium</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for record in records %}
+            <tr>
+                <td>{{record.id}}</td>
+                <td>{{record.age}}</td>
+                <td>{{record.sex}}</td>
+                <td>{{record.cp}}</td>
+                <td>{{record.trestbps}}</td>
+                <td>{{record.chol}}</td>
+                <td>{{record.fbs}}</td>
+                <td>{{record.restecg}}</td>
+                <td>{{record.thalach}}</td>
+                <td>{{record.exang}}</td>
+                <td>{{record.oldpeak}}</td>
+                <td>{{record.slope}}</td>
+                <td>{{record.ca}}</td>
+                <td>{{record.thal}}</td>
+            </tr> 
+        {% endfor %}
+            
+        </tbody>
+        </table>
+        <br/>
+   
+
+    <button  type="submit" position="center"><a href="/signout"> SignOut </a></button>
+
+</main>
+</body>
+</html>
